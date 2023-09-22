@@ -14,7 +14,8 @@ interface HQItemListener {
 }
 
 class MyhqRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>
+    private val values: List<PlaceholderItem>,
+    private val listener: HQItemListener            // Adiciona ouvinte como um parâmetro do construtor
 ) : RecyclerView.Adapter<MyhqRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,7 +35,7 @@ class MyhqRecyclerViewAdapter(
 
         holder.view.setOnClickListener {
             listener.onItemSelected(position)
-        }
+        }                                              //ouvinte clique em elemento visual da lista. Quando elemento é clicado, notifica um ouvinte (representado pelo objeto listener) um item selecionado, passando a posição como um argumento.
     }
 
     override fun getItemCount(): Int = values.size
