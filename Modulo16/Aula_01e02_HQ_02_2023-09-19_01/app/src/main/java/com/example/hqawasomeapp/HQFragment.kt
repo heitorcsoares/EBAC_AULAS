@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import androidx.navigation.navGraphViewModels
 import com.example.hqawasomeapp.placeholder.PlaceholderContent
 
-
 class HQFragment : Fragment() {
 
     private var columnCount = 1
@@ -31,13 +30,14 @@ class HQFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_item_list, container, false)
 
-        // Set the adapter
+        /** Configurando o adapter */
         if (view is RecyclerView) {
             with(view) {
                 layoutManager = when {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
+                //adapter = MyhqRecyclerViewAdapter(PlaceholderContent.ITEMS)    /** SEM ERROS */
                 adapter = MyhqRecyclerViewAdapter(PlaceholderContent.ITEMS)
             }
         }
@@ -46,8 +46,10 @@ class HQFragment : Fragment() {
 
     companion object {
 
+        // TODO: Customize parameter argument names
         const val ARG_COLUMN_COUNT = "column-count"
 
+        // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
             HQFragment().apply {

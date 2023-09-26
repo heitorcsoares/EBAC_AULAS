@@ -11,10 +11,12 @@ import com.example.hqawasomeapp.databinding.FragmentHQDetailsBinding
 
 class HQDetailsFragment : Fragment() {
 
-    private val viewModel by navGraphViewModels<HQViewModel>(R.id.hq_graph) {defaultViewModelProviderFactory}
+    private val viewModel by navGraphViewModels<HQViewModel>(R.id.hq_graph) { defaultViewModelProviderFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {
+        }
     }
 
     override fun onCreateView(
@@ -32,6 +34,7 @@ class HQDetailsFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.hqDetails = viewModel.loadHQDetails()
+        
         return binding.root
     }
 }

@@ -17,14 +17,13 @@
             android:id="@+id/hqTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{hqDetails.title}"
-            android:textColor="#000000"/>
+            android:text="@{hqDetails.title}" />
         <TextView
-            android:id="@+id/contentText"
+            android:id="@+id/hqContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{hqDetails.content}"
-            android:textColor="#000000"/>
+            android:text="@{hqDetails.content}" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
