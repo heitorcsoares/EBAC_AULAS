@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModel
 import androidx.navigation.navGraphViewModels
 import com.example.hqawasomeapp.placeholder.PlaceholderContent
+
+
 
 class HQFragment : Fragment(), HQItemListener {
 

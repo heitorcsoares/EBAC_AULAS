@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import com.example.hqawasomeapp.placeholder.PlaceholderContent.PlaceholderItem
 import com.example.hqawasomeapp.databinding.FragmentItemBinding
@@ -15,18 +17,16 @@ interface HQItemListener {
     fun onItemSelected(position: Int)
 }
 
-/** classe ENUM - com declaração dos Estados  */
-enum class State {
-    Error,
-    Loading,
-    Success
-}
-
 class MyhqRecyclerViewAdapter(
     private val values: List<PlaceholderItem>,
     private val listener: HQItemListener,           //Adiciona ouvinte como um parâmetro do construtor
     private val fragment: Fragment
 ) : RecyclerView.Adapter<MyhqRecyclerViewAdapter.ViewHolder>() {
+
+    /** LiveData - Criação de Variavel */
+    val hqDetailsLiveData: LiveData<HQDetails>
+        get() = _hqDetailsLiveData
+    private val _hqDetailsLiveData = MutableLiveData<HQDetails>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
