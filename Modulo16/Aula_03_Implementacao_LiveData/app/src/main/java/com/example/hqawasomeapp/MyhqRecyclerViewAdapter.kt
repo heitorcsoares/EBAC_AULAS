@@ -23,11 +23,6 @@ class MyhqRecyclerViewAdapter(
     private val fragment: Fragment
 ) : RecyclerView.Adapter<MyhqRecyclerViewAdapter.ViewHolder>() {
 
-    /** LiveData - Criação de Variavel */
-    val hqDetailsLiveData: LiveData<HQDetails>
-        get() = _hqDetailsLiveData
-    private val _hqDetailsLiveData = MutableLiveData<HQDetails>()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             FragmentItemBinding.inflate(

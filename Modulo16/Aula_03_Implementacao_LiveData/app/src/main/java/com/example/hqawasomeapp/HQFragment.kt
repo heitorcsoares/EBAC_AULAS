@@ -13,7 +13,6 @@ import androidx.navigation.navGraphViewModels
 import com.example.hqawasomeapp.placeholder.PlaceholderContent
 
 
-
 class HQFragment : Fragment(), HQItemListener {
 
     private var columnCount = 1
