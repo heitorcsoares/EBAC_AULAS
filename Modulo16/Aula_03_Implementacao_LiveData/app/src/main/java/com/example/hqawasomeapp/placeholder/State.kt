@@ -1,8 +1,8 @@
 package com.example.hqawasomeapp.placeholder
 
-/** classe ENUM - com declaração dos Estados  */
+/** ENUM class - declaração dos estados */
 enum class State {
-    Error,
-    Loading,
-    Success
+    ERROR,
+    LOADING,
+    SUCCESS
 }

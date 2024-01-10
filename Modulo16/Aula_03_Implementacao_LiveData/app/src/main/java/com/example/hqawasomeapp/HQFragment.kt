@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.navigation.navGraphViewModels
 import com.example.hqawasomeapp.placeholder.PlaceholderContent
@@ -60,8 +61,8 @@ class HQFragment : Fragment(), HQItemListener {
     }
 
     override fun onItemSelected(position: Int) {
-        //val selectedItem = PlaceholderContent.ITEMS[position] // Obtém o item selecionado
-        //val message = "Item selecionado: ${selectedItem.content}"
-        //Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        val selectedItem = PlaceholderContent.ITEMS[position] // Obtém o item selecionado
+        val message = "Item selecionado: ${selectedItem.content}"
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }
